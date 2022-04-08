@@ -10,7 +10,7 @@
 This guide will walk you through the installation process for [HOOMD-blue](http://glotzerlab.engin.umich.edu/hoomd-blue/) molecular dynamics simulation package and some commonly used data processing tools. Prior experience with UNIX CLI would be helpful for you to understand this guide better, but is not required. The majority of the installation will be done through your Terminal.app or it can be done through whichever terminal emulator you prefer.
 
 Note that the most current software does not always mean they are the most stable versions. Thus, I will be specifying the software versions I am installing. As a reference, the following describes the system I am using to carry out the installation steps described here.<br>
->OS: macOS Big Sur, Version 11.6.5
+>OS: macOS Big Sur, Version 11.6.5<br>
 >MacBook Pro, Mid 2015
 >i7, 16 GB DDR3 RAM
 >No dedicated GPU
