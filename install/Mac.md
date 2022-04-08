@@ -20,5 +20,6 @@ Or, run the following command:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+
 # 3. Building and Installing HOOMD-blue V3.0.0
 # 4. Installing Tools for Data Processing
