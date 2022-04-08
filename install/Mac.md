@@ -12,6 +12,8 @@ This guide will walk you through the installation process for [HOOMD-blue](http:
 Note that the most current software does not always mean they are the most stable versions. Thus, I will be specifying the software versions I am installing. As a reference, the following installation guide was carried out on
 >macOS Big Sur, Version 11.6.5
 
+Also, the following installation guide assumes your machine has x86_64 (ARM64) architecture instead of ARM, which is the case for recent MacBooks with M label chips. Given Apple's Rosetta 2, M label chips should not prohobit you from following this guide, but know that there is likely to be a drop in the performance of your HOOMD simulations ran locally. Making sure you are following this guide but switch all the x86_64 specific instructions to corresponding ones for ARM can prevent this issue.
+
 # 2. Installing Prerequisite Software and Tools
 ### 1. Install Homebrew
 Go to https://brew.sh and run the installation command shown in Terminal.<br>
@@ -19,6 +21,7 @@ Or, run the following command:
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
 
 
 # 3. Building and Installing HOOMD-blue V3.0.0
