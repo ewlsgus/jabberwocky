@@ -1,3 +1,5 @@
+# Windows Installation
+- [Windows Installation](#windows-installation)
 - [1. Introduction](#1-introduction)
 - [2. Installing Prerequisite Software and Tools](#2-installing-prerequisite-software-and-tools)
 - [3. Building and Installing HOOMD-blue V3](#3-building-and-installing-hoomd-blue-v3)
