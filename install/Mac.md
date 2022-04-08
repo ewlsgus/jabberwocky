@@ -11,8 +11,8 @@ This guide will walk you through the installation process for [HOOMD-blue](http:
 
 Note that the most current software does not always mean they are the most stable versions. Thus, I will be specifying the software versions I am installing. As a reference, the following describes the system I am using to carry out the installation steps described here.<br>
 >OS: macOS Big Sur, Version 11.6.5<br>
->MacBook Pro, Mid 2015
->i7, 16 GB DDR3 RAM
+>MacBook Pro, Mid 2015<br>
+>i7, 16 GB DDR3 RAM<br>
 >No dedicated GPU
 
 # 2. Installing Prerequisite Software and Tools
