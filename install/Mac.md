@@ -31,12 +31,12 @@ Or, run the following command:
 
 ### 2-2. Install Miniconda
 
-Go to <https://docs.conda.io/en/latest/miniconda.html> to download and install Miniconda for Python 3.9. The following commands will install Miniconda with conda version 4.11.0. I have confirmed that version 4.12.0 works without any problem.
+Go to <https://docs.conda.io/en/latest/miniconda.html> to download and install Miniconda for Python 3.9. The following commands will install Miniconda with conda version 4.11.0. I have confirmed that updating to version 4.12.0 works without any problem.
 
 ```bash
-curl -sO https://repo.anaconda.com/miniconda/Miniconda3-py39_4.11.0-MacOSX-x86_64.sh;
-/bin/bash ./Miniconda*.sh -b -p $HOME/miniconda3;
-$HOME/miniconda3/bin/conda init bash zsh;
+curl -sO https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-MacOSX-x86_64.sh;\
+/bin/bash ./Miniconda*.sh -b -p $HOME/miniconda3;\
+$HOME/miniconda3/bin/conda init bash zsh;\
 source $HOME/.bash_profile $HOME/.zshrc;
 ```
 
