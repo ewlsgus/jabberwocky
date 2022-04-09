@@ -37,7 +37,8 @@ Go to <https://docs.conda.io/en/latest/miniconda.html> to download and install M
 curl -sO https://repo.anaconda.com/miniconda/Miniconda3-py39_4.11.0-MacOSX-x86_64.sh;\
 /bin/bash ./Miniconda*.sh -b -p $HOME/miniconda3;\
 $HOME/miniconda3/bin/conda init bash zsh;\
-source $HOME/.bash_profile $HOME/.zshrc;
+source $HOME/.bash_profile $HOME/.zshrc;\
+rm $HOME/Miniconda*.sh;
 ```
 
 ## 3. Building and Installing HOOMD-blue V3.0.0
