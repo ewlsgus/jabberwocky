@@ -1,14 +1,15 @@
 # Mac Installation
 
-- [1. Introduction](#1-introduction)
-- [2. Installing Prerequisite Software and Tools](#2-installing-prerequisite-software-and-tools)
-  - [2-1. Install Homebrew](#1-install-homebrew)
-  - [2-2. Install Miniconda](#2-2-install-miniconda)
-- [3. Building and Installing HOOMD-blue V3.0.0](#3-building-and-installing-hoomd-blue-v300)
-  - [3-1. Create Conda Environment](#3-1-create-conda-environment)
-  - [3-2 Install HOOMD-blue Molecular Dynamics Simulation Package](#3-2-install-hoomd-blue-molecular-dynamics-simulation-package)
-- [4. Installing Tools for Data Processing](#4-installing-tools-for-data-processing)
-- [5. Troubleshooting](#5-troubleshooting)
+- [Mac Installation](#mac-installation)
+  - [1. Introduction](#1-introduction)
+  - [2. Installing Prerequisite Software and Tools](#2-installing-prerequisite-software-and-tools)
+    - [2-1. Install Homebrew and git](#2-1-install-homebrew-and-git)
+    - [2-2. Install Miniconda](#2-2-install-miniconda)
+  - [3. Installing HOOMD-blue V3.0.0](#3-installing-hoomd-blue-v300)
+    - [3-1 Create Conda Environment](#3-1-create-conda-environment)
+    - [3-2 Install HOOMD-blue Molecular Dynamics Simulation Package](#3-2-install-hoomd-blue-molecular-dynamics-simulation-package)
+  - [4. Installing Tools for Data Processing](#4-installing-tools-for-data-processing)
+  - [5. Troubleshooting](#5-troubleshooting)
 
 ## 1. Introduction
 
@@ -87,6 +88,12 @@ conda install -c conda-forge "hoomd=3.0.0=*cpu*"
 
 Note the quotation marks as zsh may interpret the asterisk for something else and not pass it to conda.
 
+If you see an output regarding
+
+>failed with initial frozen solve,
+
+don't worry about it. It is most likely will resolve itself.
+
 As far as I know, there is no support from HOOMD-blue for AMD GPUs on Mac (more specifically no support for ROCm for Mac). Thus, you shouldn't need any GPU related builds on your Mac. I doubt this will ever be the case, but if you do have an eGPU, just search for instructions on CUDA setup on Macs and then install the GPU build instead of CPU.
 
 This sets up the conda environment with HOOMD-blue simulation package on your machine. Confirm that the simulation package is working by starting up a python session with `python`.
@@ -126,11 +133,13 @@ Install the packages listed above.
 conda install --strict-channel-priority -c https://conda.ovito.org -c conda-forge ovito freud gsd shapely matplotlib
 ```
 
-If you see an output regarding
+Again, here you may get an output regarding
 
 >failed with initial frozen solve,
 
-don't worry about it. It is most likely will resolve itself. After this, you should have commonly used post-processing tools installed within your post_proc environment.
+don't worry about it as long as it resolves itself.
+
+After this, you should have commonly used post-processing tools installed within your post_proc environment.
 
 From this point and on, unless there's a serious issue like the version of the software you're currently using is bugged or deprecated, I would recommend you NOT to try to upgrade anything. As the popular saying goes
 
