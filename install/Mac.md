@@ -8,6 +8,7 @@
 - [3. Building and Installing HOOMD-blue V3.0.0](#3-building-and-installing-hoomd-blue-v300)
   - [3-1. Create Conda Environment](#3-1-create-conda-environment)
 - [4. Installing Tools for Data Processing](#4-installing-tools-for-data-processing)
+- [5. Troubleshooting](#5-troubleshooting)
 
 ## 1. Introduction
 
