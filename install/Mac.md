@@ -1,6 +1,5 @@
 # Mac Installation
 
-- [Mac Installation](#mac-installation)
 - [1. Introduction](#1-introduction)
 - [2. Installing Prerequisite Software and Tools](#2-installing-prerequisite-software-and-tools)
   - [2-1. Install Homebrew](#1-install-homebrew)
