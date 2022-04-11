@@ -130,7 +130,7 @@ Note that a python version is not specified and the environment is created witho
 Install the packages listed above.
 
 ```bash
-conda install --strict-channel-priority -c https://conda.ovito.org -c conda-forge ovito freud gsd shapely matplotlib
+conda install -y --strict-channel-priority -c https://conda.ovito.org -c conda-forge ovito freud gsd shapely matplotlib
 ```
 
 Again, here you may get an output regarding
