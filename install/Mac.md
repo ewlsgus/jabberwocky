@@ -6,6 +6,7 @@
   - [2-2. Install Miniconda](#2-2-install-miniconda)
 - [3. Building and Installing HOOMD-blue V3.0.0](#3-building-and-installing-hoomd-blue-v300)
   - [3-1. Create Conda Environment](#3-1-create-conda-environment)
+  - [3-2 Install HOOMD-blue Molecular Dynamics Simulation Package](#3-2-install-hoomd-blue-molecular-dynamics-simulation-package)
 - [4. Installing Tools for Data Processing](#4-installing-tools-for-data-processing)
 - [5. Troubleshooting](#5-troubleshooting)
 
@@ -77,6 +78,8 @@ conda activate $HOME/pyEnvs/hoomd
 ```
 
 Run `conda list` to ensure the specified python version is installed.
+
+### 3-2 Install HOOMD-blue Molecular Dynamics Simulation Package
 
 ```bash
 conda install -c conda-forge "hoomd=3.0.0=*cpu*"
