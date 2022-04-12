@@ -37,9 +37,9 @@ Type the following commands to download and install miniconda3 with Python versi
 
 ```bash
 curl -sO https://repo.anaconda.com/miniconda/Miniconda3-py39_4.11.0-Linux-x86_64.sh
-/bin/bash ./Miniconda*.sh -b -p $HOME/miniconda3
-$HOME/miniconda3/bin/conda init bash zsh
-source $HOME/.bash_profile $HOME/.zshrc
+bash ./Miniconda*.sh -b -p $HOME/miniconda3
+$HOME/miniconda3/bin/conda init bash
+source $HOME/.bashrc
 rm $HOME/Miniconda*.sh
 ```
 
