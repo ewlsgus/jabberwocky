@@ -46,6 +46,8 @@ rm $HOME/Miniconda*.sh
 You can confirm the Miniconda installation by running `conda -V` in your terminal. The output should resemble the following:
 >conda 4.11.0
 
+I have confirmed that 4.12.0 works without any problem, so you can upgrade it to 4.12.0 with `conda install -n base -c defaults conda=4.12.0`.
+
 ## 3. Installing HOOMD-blue V3.0.0
 
 ### 3-1 Create Conda Environment
@@ -69,21 +71,13 @@ conda activate $HOME/pyEnvs/hoomd
 
 Run `conda list` to ensure the specified python version is installed.
 
-### 3-2 Install HOOMD-blue Molecular Dynamics Simulation Package
+### 3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.0
+
+Start by downloading the tar for HOOMD-blue 3.0.0
 
 ```bash
-conda install -c conda-forge "hoomd=3.0.0=*cpu*"
+curl -O https://glotzerlab.engin.umich.edu/Downloads/hoomd/hoomd-v3.0.0.tar.gz
 ```
-
-Note the quotation marks as zsh may interpret the asterisk for something else and not pass it to conda.
-
-If you see an output regarding
-
->failed with initial frozen solve,
-
-don't worry about it. It is most likely will resolve itself.
-
-As far as I know, there is no support from HOOMD-blue for AMD GPUs on Mac (more specifically no support for ROCm for Mac). Thus, you shouldn't need any GPU related builds on your Mac. I doubt this will ever be the case, but if you do have an eGPU, just search for instructions on CUDA setup on Macs and then install the GPU build instead of CPU.
 
 This sets up the conda environment with HOOMD-blue simulation package on your machine. Confirm that the simulation package is working by starting up a python session with `python`.
 Then, use the following codes to confirm.
