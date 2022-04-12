@@ -96,8 +96,7 @@ don't worry about it. It is most likely will resolve itself.
 
 As far as I know, there is no support from HOOMD-blue for AMD GPUs on Mac (more specifically no support for ROCm for Mac). Thus, you shouldn't need any GPU related builds on your Mac. I doubt this will ever be the case, but if you do have an eGPU, just search for instructions on CUDA setup on Macs and then install the GPU build instead of CPU.
 
-This sets up the conda environment with HOOMD-blue simulation package on your machine. Confirm that the simulation package is working by starting up a python session with `python`.
-Then, use the following codes to confirm.
+This sets up the conda environment with HOOMD-blue simulation package on your machine. Confirm that the simulation package is working by starting up a python session with `python`. Then, run the following to confirm the installation.
 
 ```python
 import hoomd

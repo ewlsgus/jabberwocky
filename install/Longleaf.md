@@ -1,14 +1,9 @@
 # Longleaf Installation
 
-- [1. Introduction](#1-introduction)
-- [2. Getting Prerequisite Software and Tools](#2-getting-prerequisite-software-and-tools)
-- [2-1. Load Modules](#2-1-load-modules)
-- [2-2. Install Miniconda](#2-2-install-miniconda)
-- [3. Installing HOOMD-blue V3.0.0](#3-installing-hoomd-blue-v300)
-- [3-1 Create Conda Environment](#3-1-create-conda-environment)
-- [3-2 Install HOOMD-blue Molecular Dynamics Simulation Package](#3-2-install-hoomd-blue-molecular-dynamics-simulation-package)
-- [4. Installing Tools for Data Processing](#4-installing-tools-for-data-processing)
-- [5. Troubleshooting](#5-troubleshooting)
+-[]
+-[]
+-[]
+-[]
 
 ## 1. Introduction
 
@@ -50,7 +45,7 @@ I have confirmed that 4.12.0 works without any problem, so you can upgrade it to
 
 ## 3. Installing HOOMD-blue V3.0.0
 
-### 3-1 Create Conda Environment
+### 3-1 Create Conda Environment and Install Prerequisite Software
 
 Conda is capable of creating environments with specified versions of python and packages. You can switch between the environments by activating them, providing you with a customized, separate environment for each specific task. In this guide, we will separate our environments into one specificically for HOOMD-blue simulation package and another for post-processing of the simulation data. By default, the environments are contained within `$HOME/miniconda3/envs/`, but this guide will contain all the environments within `$HOME/pyEnvs/`. If desired, changing the environment directory should not affect workflow as long as the paths in your simulation scripts are changed accordingly.
 
@@ -71,16 +66,49 @@ conda activate $HOME/pyEnvs/hoomd
 
 Run `conda list` to ensure the specified python version is installed.
 
+Install the following conda packages needed for building HOOMD-blue.
+
+  1. eigen
+  2. numpy
+  3. pybind11
+  4. tbb
+  5. tbb-devel
+
+```bash
+conda install -c conda-forge eigen numpy pybind11 tbb tbb-devel
+```
+
+Confirm the installation by running `conda list` again.
+
 ### 3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.0
 
-Start by downloading the tar for HOOMD-blue 3.0.0
+Start by downloading the tar for HOOMD-blue 3.0.0 and unarchiving.
 
 ```bash
 curl -O https://glotzerlab.engin.umich.edu/Downloads/hoomd/hoomd-v3.0.0.tar.gz
+tar -xvf ./hoomd-v3.0.0.tar.gz
 ```
 
-This sets up the conda environment with HOOMD-blue simulation package on your machine. Confirm that the simulation package is working by starting up a python session with `python`.
-Then, use the following codes to confirm.
+Prepare the build directory and move to the directory.
+
+```bash
+mkdir -p ./hoomd-v3.0.0/build
+cd ./hoomd-v3.0.0/build
+```
+
+Configure build settings with CUDA and TBB enabled.
+
+```bash
+CC=gcc CXX=g++ cmake ../ -DCMAKE_INSTALL_PREFIX=`python3 -c "import site; print(site.getsitepackages()[0])"` -DCMAKE_CXX_FLAGS=-march=native -DCMAKE_C_FLAGS=-march=native -DENABLE_GPU=ON -DENABLE_TBB=ON
+```
+
+Once the configuration has finished, build and install HOOMD-blue.
+
+```bash
+make all -j16 install
+```
+
+To confirm the installation, start a python session with `python` and run the following.
 
 ```python
 import hoomd
