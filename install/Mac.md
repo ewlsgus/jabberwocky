@@ -28,7 +28,7 @@ Homebrew (<https://brew.sh/>)is a package manager that will help you to install 
 
 Go to <https://brew.sh> and run the installation command shown in Terminal.
 
-```bash
+```zsh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
@@ -36,7 +36,7 @@ This will install Homebrew package manager as well as the Command Line Tools tha
 
 Git will be installed with the following commands.
 
-```bash
+```zsh
 brew install git
 ```
 
@@ -46,7 +46,7 @@ Note that macOS's default shell has changed to zsh from bash. There should not b
 
 Go to <https://docs.conda.io/en/latest/miniconda.html> to download and install Miniconda for Python 3.9 or run the code shown below to install Miniconda 4.11.0. I have confirmed that updating to version 4.12.0 works without any problem.
 
-```bash
+```zsh
 curl -sO https://repo.anaconda.com/miniconda/Miniconda3-py39_4.11.0-MacOSX-x86_64.sh
 /bin/bash ./Miniconda*.sh -b -p $HOME/miniconda3
 $HOME/miniconda3/bin/conda init bash zsh
@@ -65,7 +65,7 @@ Conda is capable of creating environments with specified versions of python and 
 
 First, we start with creating an environment for HOOMD-blue simulation package.
 
-```bash
+```zsh
 mkdir $HOME/pyEnvs
 conda create --prefix $HOME/pyEnvs/hoomd -y python=3.8
 ```
@@ -74,7 +74,7 @@ Note that I am using python 3.8 here, but HOOMD-blue V3.0 requires any python ab
 
 Activate the created conda environment.
 
-```bash
+```zsh
 conda activate $HOME/pyEnvs/hoomd
 ```
 
@@ -82,7 +82,7 @@ Run `conda list` to ensure the specified python version is installed.
 
 ### 3-2 Install HOOMD-blue Molecular Dynamics Simulation Package
 
-```bash
+```zsh
 conda install -c conda-forge "hoomd=3.0.0=*cpu*"
 ```
 
@@ -120,7 +120,7 @@ We will create a separate conda environment to contain the post-processing tools
 
 Start by creating a conda environment and activating it.
 
-```bash
+```zsh
 conda create --prefix $HOME/pyEnvs/post_proc -y
 conda activate $HOME/pyEnvs/post_proc
 ```
@@ -129,7 +129,7 @@ Note that a python version is not specified and the environment is created witho
 
 Install the packages listed above.
 
-```bash
+```zsh
 conda install -y --strict-channel-priority -c https://conda.ovito.org -c conda-forge ovito freud gsd shapely matplotlib
 ```
 
@@ -147,7 +147,7 @@ From this point and on, unless there's a serious issue like the version of the s
 
 However, should you need to update your software packages, priortize OVITO and their software channel by specifying the channel priority.
 
-```bash
+```zsh
 conda upgrade --strict-channel-priority -c https://conda.ovito.org -c conda-forge *package_name*
 ```
 
