@@ -2,11 +2,11 @@
 
 -[1. Introduction](#1-introduction)
 -[2. Getting Prerequisite Software and Tools](#2-getting-prerequisite-software-and-tools)
--[2-1. Load Modules](#2-1-load-modules)
--[2-2. Install Miniconda](#2-2-install-miniconda)
+  -[2-1. Load Modules](#2-1-load-modules)
+  -[2-2. Install Miniconda](#2-2-install-miniconda)
 -[3. Installing HOOMD-blue V3.0.0](#3-installing-hoomd-blue-v300)
--[3-1 Create Conda Environment and Install Prerequisite Software](#3-1-create-conda-environment-and-install-prerequisite-software)
--[3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.0](#3-2-build-and-install-hoomd-blue-molecular-dynamics-simulation-package-v300)
+  -[3-1 Create Conda Environment and Install Prerequisite Software](#3-1-create-conda-environment-and-install-prerequisite-software)
+  -[3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.0](#3-2-build-and-install-hoomd-blue-molecular-dynamics-simulation-package-v300)
 -[4. Installing Tools for Data Processing](#4-installing-tools-for-data-processing)
 -[5. Troubleshooting](#5-troubleshooting)
 

@@ -1,15 +1,14 @@
 # Mac Installation Guide
 
-- [Mac Installation](#mac-installation)
-  - [1. Introduction](#1-introduction)
-  - [2. Installing Prerequisite Software and Tools](#2-installing-prerequisite-software-and-tools)
-    - [2-1. Install Homebrew and git](#2-1-install-homebrew-and-git)
-    - [2-2. Install Miniconda](#2-2-install-miniconda)
-  - [3. Installing HOOMD-blue V3.0.0](#3-installing-hoomd-blue-v300)
-    - [3-1 Create Conda Environment](#3-1-create-conda-environment)
-    - [3-2 Install HOOMD-blue Molecular Dynamics Simulation Package](#3-2-install-hoomd-blue-molecular-dynamics-simulation-package)
-  - [4. Installing Tools for Data Processing](#4-installing-tools-for-data-processing)
-  - [5. Troubleshooting](#5-troubleshooting)
+- [1. Introduction](#1-introduction)
+- [2. Installing Prerequisite Software and Tools](#2-installing-prerequisite-software-and-tools)
+  - [2-1. Install Homebrew and git](#2-1-install-homebrew-and-git)
+  - [2-2. Install Miniconda](#2-2-install-miniconda)
+- [3. Installing HOOMD-blue V3.0.0](#3-installing-hoomd-blue-v300)
+  - [3-1 Create Conda Environment](#3-1-create-conda-environment)
+  - [3-2 Install HOOMD-blue Molecular Dynamics Simulation Package](#3-2-install-hoomd-blue-molecular-dynamics-simulation-package)
+- [4. Installing Tools for Data Processing](#4-installing-tools-for-data-processing)
+- [5. Troubleshooting](#5-troubleshooting)
 
 ## 1. Introduction
 
