@@ -1,4 +1,4 @@
-# Mac Installation
+# Mac Installation Guide
 
 - [Mac Installation](#mac-installation)
   - [1. Introduction](#1-introduction)
