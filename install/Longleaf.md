@@ -71,13 +71,7 @@ conda activate $HOME/pyEnvs/hoomd
 
 Run `conda list` to ensure the specified python version is installed.
 
-Install the following conda packages needed for building HOOMD-blue.
-
-  1. eigen
-  2. numpy
-  3. pybind11
-  4. tbb
-  5. tbb-devel
+Install the prerequisite conda packages needed for building HOOMD-blue.
 
 ```bash
 conda install -c conda-forge eigen numpy pybind11 tbb tbb-devel gsd cereal
