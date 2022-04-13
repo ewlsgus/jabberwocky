@@ -82,7 +82,7 @@ Run `conda list` to ensure the specified python version is installed.
 ### 3-2 Install HOOMD-blue Molecular Dynamics Simulation Package
 
 ```zsh
-conda install -c conda-forge "hoomd=3.0.0=*cpu*"
+conda install -c conda-forge eigen numpy pybind11 tbb tbb-devel gsd cereal "hoomd=3.0.0=*cpu*"
 ```
 
 Note the quotation marks as zsh may interpret the asterisk for something else and not pass it to conda.

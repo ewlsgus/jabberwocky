@@ -80,7 +80,7 @@ Install the following conda packages needed for building HOOMD-blue.
   5. tbb-devel
 
 ```bash
-conda install -c conda-forge eigen numpy pybind11 tbb tbb-devel
+conda install -c conda-forge eigen numpy pybind11 tbb tbb-devel gsd cereal
 ```
 
 Confirm the installation by running `conda list` again.
