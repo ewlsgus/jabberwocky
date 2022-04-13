@@ -81,30 +81,23 @@ Confirm the installation by running `conda list` again.
 
 ### 3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.0
 
-Start by downloading the tar for HOOMD-blue 3.0.0 and unarchiving.
+Start by cloning the github repository.
 
 ```bash
-curl -O https://glotzerlab.engin.umich.edu/Downloads/hoomd/hoomd-v3.0.0.tar.gz
-tar -xvf ./hoomd-v3.0.0.tar.gz
-```
-
-Prepare the build directory and move to the directory.
-
-```bash
-mkdir -p ./hoomd-v3.0.0/build
-cd ./hoomd-v3.0.0/build
+git clone --recursive https://github.com/glotzerlab/hoomd-blue
 ```
 
 Configure build settings with CUDA and TBB enabled.
 
 ```bash
-CC=gcc CXX=g++ cmake ../ -DCMAKE_INSTALL_PREFIX=`python3 -c "import site; print(site.getsitepackages()[0])"` -DCMAKE_CXX_FLAGS=-march=native -DCMAKE_C_FLAGS=-march=native -DENABLE_GPU=ON -DENABLE_TBB=ON
+CC=gcc CXX=g++ cmake -B build/hoomd -S hoomd-blue -DCMAKE_INSTALL_PREFIX=`python3 -c "import site; print(site.getsitepackages()[0])"` -DCMAKE_CXX_FLAGS=-march=native -DCMAKE_C_FLAGS=-march=native -DENABLE_GPU=ON -DENABLE_TBB=ON
 ```
 
 Once the configuration has finished, build and install HOOMD-blue.
 
 ```bash
-make all -j16 install
+cmake --build build/hoomd -j8
+cmake --install build/hoomd
 ```
 
 To confirm the installation, start a python session with `python` and run the following.
