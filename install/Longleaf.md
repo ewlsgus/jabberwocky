@@ -133,21 +133,19 @@ Note that a python version is not specified and the environment is created witho
 Install the packages listed above.
 
 ```bash
-conda install -y --strict-channel-priority -c https://conda.ovito.org -c conda-forge ovito freud gsd shapely matplotlib
+conda install -y --strict-channel-priority -c https://conda.ovito.org -c conda-forge ovito=3.7.2 freud gsd shapely matplotlib xvfbwrapper
 ```
 
+Note the version specification for OVITO. As of early April of 2022, OVITO V3.7.2 is compatible with other packages while V3.7.3 will conflict with others and won't function correctly even though it will install. If you encounter a problem running OVITO scripts, try different ovito versions.
+
 Again, here you may get an output regarding
-
 >failed with initial frozen solve,
-
 don't worry about it as long as it resolves itself.
 
 After this, you should have commonly used post-processing tools installed within your post_proc environment.
 
 From this point and on, unless there's a serious issue like the version of the software you're currently using is bugged or deprecated, I would recommend you NOT to try to upgrade anything. As the popular saying goes
-
 >If it ain't broke, don't fix it.
-
 However, should you need to update your software packages, priortize OVITO and their software channel by specifying the channel priority.
 
 ```bash
