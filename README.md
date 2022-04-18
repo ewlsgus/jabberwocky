@@ -9,4 +9,4 @@ Please refer to [this](./install/Windows.md) guide for Windows users.
 
 Please refer to [this](./install/Longleaf.md) guide to set up your research environment on UNC-CH's Longleaf Research Computing system.
 
-For notes on building simple HOOMD-blue simulation scripts, refer to [these](./HOOMD3Tutorial/index.ipynb) jupyter notebooks.
+For notes on building simple HOOMD-blue simulation scripts, refer to [these](https://nbviewer.org/github/ewlsgus/jabberwocky/blob/main/HOOMD3Tutorial/index.ipynb) jupyter notebooks.
