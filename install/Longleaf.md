@@ -61,7 +61,7 @@ mkdir $HOME/pyEnvs
 conda create --prefix $HOME/pyEnvs/hoomd -y python=3.8
 ```
 
-Note that I am using python 3.8 here, but HOOMD-blue V3.0 requires any python above 3.6. Change this according to your needs.
+Note that I am using python 3.8 here, but HOOMD-blue V3 requires any python above 3.6. Change this according to your needs.
 
 Activate the created conda environment.
 
@@ -100,7 +100,7 @@ cmake --build build/hoomd -j8
 cmake --install build/hoomd
 ```
 
-To confirm the installation, start a python session with `python` and run the following.
+To confirm the installation, start an interactive python session with `python` and run the following.
 
 ```python
 import hoomd
