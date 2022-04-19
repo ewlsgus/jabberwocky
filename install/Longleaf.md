@@ -45,11 +45,12 @@ rm $HOME/Miniconda*.sh
 ```
 
 You can confirm the Miniconda installation by running `conda -V` in your terminal. The output should resemble the following:
+
 >conda 4.11.0
 
 I have confirmed that 4.12.0 works without any problem, so you can upgrade it to 4.12.0 with `conda install -n base -c defaults conda=4.12.0`.
 
-## 3. Installing HOOMD-blue V3.0.0
+## 3. Installing HOOMD-blue V3.0.1
 
 ### 3-1 Create Conda Environment and Install Prerequisite Software
 
@@ -62,7 +63,7 @@ mkdir $HOME/pyEnvs
 conda create --prefix $HOME/pyEnvs/hoomd -y python=3.8
 ```
 
-Note that I am using python 3.8 here, but HOOMD-blue V3.0 requires any python above 3.6. Change this according to your needs.
+Note that I am using python 3.8 here, but HOOMD-blue V3 requires any python above 3.6. Change this according to your needs.
 
 Activate the created conda environment.
 
@@ -80,7 +81,7 @@ conda install -c conda-forge eigen numpy pybind11 tbb tbb-devel gsd cereal
 
 Confirm the installation by running `conda list` again.
 
-### 3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.0
+### 3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.1
 
 Start by cloning the github repository.
 
@@ -101,7 +102,7 @@ cmake --build build/hoomd -j8
 cmake --install build/hoomd
 ```
 
-To confirm the installation, start a python session with `python` and run the following.
+To confirm the installation, start an interactive python session with `python` and run the following.
 
 ```python
 import hoomd
@@ -110,6 +111,7 @@ integrator.dt
 ```
 
 This should output the following.
+
 >0.005
 
 ## 4. Installing Tools for Data Processing
@@ -140,7 +142,9 @@ conda install -y --strict-channel-priority -c https://conda.ovito.org -c conda-f
 Note the version specification for OVITO. As of early April of 2022, OVITO V3.7.2 is compatible with other packages while V3.7.3 will conflict with others and won't function correctly even though it will install. If you encounter a problem running OVITO scripts, try different ovito versions.
 
 Again, here you may get an output regarding
+
 >failed with initial frozen solve,
+
 don't worry about it as long as it resolves itself.
 
 After this, you should have commonly used post-processing tools installed within your post_proc environment.
@@ -175,3 +179,5 @@ conda deactivate
 ## 6. Troubleshooting
 
 To be added.
+
+### Last Updated on 2022-04-19
