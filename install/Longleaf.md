@@ -8,7 +8,8 @@
   - [3-1 Create Conda Environment and Install Prerequisite Software](#3-1-create-conda-environment-and-install-prerequisite-software)
   - [3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.0](#3-2-build-and-install-hoomd-blue-molecular-dynamics-simulation-package-v300)
 - [4. Installing Tools for Data Processing](#4-installing-tools-for-data-processing)
-- [5. Troubleshooting](#5-troubleshooting)
+- [5. Submitting Slurm Jobs](#5-submitting-slurm-jobs)
+- [6. Troubleshooting](#6-troubleshooting)
 
 ## 1. Introduction
 
@@ -152,6 +153,25 @@ However, should you need to update your software packages, priortize OVITO and t
 conda upgrade --strict-channel-priority -c https://conda.ovito.org -c conda-forge *package_name*
 ```
 
-## 5. Troubleshooting
+## 5. Submitting Slurm Jobs
+
+To run a slurm job with python packages within a conda environment, simply activate the environment within your submission script. For example:
+
+```bash
+#!/bin/bash
+
+#SBATCH options
+#SBATCH options
+#SBATCH options
+
+source $HOME/.bashrc
+conda activate $HOME/pyEnvs/hoomd
+
+python3 -u yourScript.py arg1 arg2 arg3 ...
+
+conda deactivate
+```
+
+## 6. Troubleshooting
 
 To be added.
