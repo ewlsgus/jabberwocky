@@ -48,7 +48,7 @@ You can confirm the Miniconda installation by running `conda -V` in your termina
 
 I have confirmed that 4.12.0 works without any problem, so you can upgrade it to 4.12.0 with `conda install -n base -c defaults conda=4.12.0`.
 
-## 3. Installing HOOMD-blue V3.0.0
+## 3. Installing HOOMD-blue V3.0.1
 
 ### 3-1 Create Conda Environment and Install Prerequisite Software
 
@@ -79,7 +79,7 @@ conda install -c conda-forge eigen numpy pybind11 tbb tbb-devel gsd cereal
 
 Confirm the installation by running `conda list` again.
 
-### 3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.0
+### 3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.1
 
 Start by cloning the github repository.
 
