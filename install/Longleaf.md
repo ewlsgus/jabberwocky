@@ -139,7 +139,7 @@ Install the packages listed above.
 conda install -y --strict-channel-priority -c https://conda.ovito.org -c conda-forge ovito=3.7.2 freud gsd shapely matplotlib xvfbwrapper
 ```
 
-Note the version specification for OVITO. As of early April of 2022, OVITO V3.7.2 is compatible with other packages while V3.7.3 will conflict with others and won't function correctly even though it will install. If you encounter a problem running OVITO scripts, try different ovito versions.
+Note the version specification for OVITO. If you don't, conda will automatically choose a lower version of OVITO, which has problems with the available and installed libraries on the cluster. From my experience, OVITO is the most finicky package to work with, so I recommend priortizing it if you plan to use it.
 
 Again, here you may get an output regarding
 
