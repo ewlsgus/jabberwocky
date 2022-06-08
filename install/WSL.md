@@ -3,7 +3,10 @@
 - [1. Introduction](#1-introduction)
 - [2. Setting up Windows 10/11 for WSL2 Installation](#2-setting-up-windows-1011-for-wsl2-installation)
 - [3. Installing WSL Linux Distribution](#3-installing-wsl-linux-distribution)
-  - [3-1. Install NVIDIA GPU Drivers for WSL Support](#3-1-install-nvidia-gpu-drivers-for-wsl-support) 
+  - [3-1. Install NVIDIA GPU Drivers for WSL Support](#3-1-install-nvidia-gpu-drivers-for-wsl-support)
+  - [3-2. Install Ubuntu](#3-2-install-ubuntu)
+  - [3-3. CUDA Setup on Ubuntu]()
+- [4. Installing HOOMD-blue in  WSL](#4-installing-hoomd-blue-in-wsl)
 
 ## 1. Introduction
 
@@ -62,6 +65,8 @@ Otherwise, you can install Ubuntu with `wsl --install -d Ubuntu` on PowerShell.
 Once installed, a command prompt will pop up, finalizing the installation. After the installation, you will be asked to enter a username and a password. This will be your user account within your WSL installation (completely unrelated to your Windows account and login), so pick something you can remember and don't worry too much about it. You're unlikely to need it too often.
 
 After setting up the user account, you will be able to start using the Ubuntu shell. Update the distro with `sudo apt update` followed by `sudo apt upgrade`. You will be prompted for the password you set in the previous step.
+
+### 3-3. CUDA Setup on Ubuntu
 
 For the machines equipped with NVIDIA graphics cards, you need to do a few extra steps for you to be able to utilize your GPU. If your machine is not equipped with a GPU, proceed to section [4](#4-installing-hoomd-blue-in-wsl).
 
