@@ -4,9 +4,9 @@
 - [2. Getting Prerequisite Software and Tools](#2-getting-prerequisite-software-and-tools)
   - [2-1. Load Modules](#2-1-load-modules)
   - [2-2. Install Miniconda](#2-2-install-miniconda)
-- [3. Installing HOOMD-blue V3.0.0](#3-installing-hoomd-blue-v300)
+- [3. Installing HOOMD-blue V3](#3-installing-hoomd-blue-v3)
   - [3-1 Create Conda Environment and Install Prerequisite Software](#3-1-create-conda-environment-and-install-prerequisite-software)
-  - [3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.0](#3-2-build-and-install-hoomd-blue-molecular-dynamics-simulation-package-v300)
+  - [3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3](#3-2-build-and-install-hoomd-blue-molecular-dynamics-simulation-package-v3)
 - [4. Installing Tools for Data Processing](#4-installing-tools-for-data-processing)
 - [5. Submitting Slurm Jobs](#5-submitting-slurm-jobs)
 - [6. Troubleshooting](#6-troubleshooting)
@@ -48,19 +48,18 @@ You can confirm the Miniconda installation by running `conda -V` in your termina
 
 >conda 4.11.0
 
-I have confirmed that 4.12.0 works without any problem, so you can upgrade it to 4.12.0 with `conda install -n base -c defaults conda=4.12.0`.
+Not necessary, but you can update your conda install with `conda install -n base -c defaults conda`.
 
-## 3. Installing HOOMD-blue V3.0.1
+## 3. Installing HOOMD-blue V3
 
 ### 3-1 Create Conda Environment and Install Prerequisite Software
 
-Conda is capable of creating environments with specified versions of python and packages. You can switch between the environments by activating them, providing you with a customized, separate environment for each specific task. In this guide, we will separate our environments into one specificically for HOOMD-blue simulation package and another for post-processing of the simulation data. By default, the environments are contained within `$HOME/miniconda3/envs/`, but this guide will contain all the environments within `$HOME/pyEnvs/`. If desired, changing the environment directory should not affect workflow as long as the paths in your simulation scripts are changed accordingly.
+Conda is capable of creating environments with specified versions of python and packages. You can switch between the environments by activating them, providing you with a customized, separate environment for each specific task. In this guide, we will separate our environments into one specificically for HOOMD-blue simulation package and another for post-processing of the simulation data.
 
 First, we start with creating an environment for HOOMD-blue simulation package.
 
 ```bash
-mkdir $HOME/pyEnvs
-conda create --prefix $HOME/pyEnvs/hoomd -y python=3.8
+conda create -n hoomd -y python=3.8
 ```
 
 Note that I am using python 3.8 here, but HOOMD-blue V3 requires any python above 3.6. Change this according to your needs.
@@ -68,7 +67,7 @@ Note that I am using python 3.8 here, but HOOMD-blue V3 requires any python abov
 Activate the created conda environment.
 
 ```bash
-conda activate $HOME/pyEnvs/hoomd
+conda activate hoomd
 ```
 
 Run `conda list` to ensure the specified python version is installed.
@@ -81,7 +80,7 @@ conda install -c conda-forge eigen numpy pybind11 tbb tbb-devel gsd cereal
 
 Confirm the installation by running `conda list` again.
 
-### 3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3.0.1
+### 3-2 Build and Install HOOMD-blue Molecular Dynamics Simulation Package V3
 
 Start by cloning the github repository.
 
@@ -127,8 +126,8 @@ We will create a separate conda environment to contain the post-processing tools
 Start by creating a conda environment and activating it.
 
 ```bash
-conda create --prefix $HOME/pyEnvs/post_proc -y
-conda activate $HOME/pyEnvs/post_proc
+conda create -n post_proc -y
+conda activate post_proc
 ```
 
 Note that a python version is not specified and the environment is created without any python pre-installed. We will let OVITO pull the dependency list and install the appropriate version of python.
@@ -136,7 +135,7 @@ Note that a python version is not specified and the environment is created witho
 Install the packages listed above.
 
 ```bash
-conda install -y --strict-channel-priority -c https://conda.ovito.org -c conda-forge ovito=3.7.2 freud gsd shapely matplotlib xvfbwrapper
+conda install -y --strict-channel-priority -c https://conda.ovito.org -c conda-forge ovito=3.7.5 freud gsd shapely matplotlib xvfbwrapper
 ```
 
 Note the version specification for OVITO. If you don't, conda will automatically choose a lower version of OVITO, which has problems with the available and installed libraries on the cluster. From my experience, OVITO is the most finicky package to work with, so I recommend priortizing it if you plan to use it.
@@ -159,22 +158,35 @@ conda upgrade --strict-channel-priority -c https://conda.ovito.org -c conda-forg
 
 ## 5. Submitting Slurm Jobs
 
+
+
 To run a slurm job with python packages within a conda environment, simply activate the environment within your submission script. For example:
 
 ```bash
 #!/bin/bash
 
-#SBATCH options
-#SBATCH options
-#SBATCH options
+#SBATCH -N 1 # 1 task
+#SBATCH -n 1 # request 1 CPU core
+#SBATCH -p volta-gpu # partition for the simulation to be run (general, gpu, volta-gpu)
+#SBATCH --mem=1g # request 1gb of memory
+#SBATCH -t 11-00:00 # request to run for the maximum allowed time (11 days)
+#SBATCH --qos=gpu_access # quality of service
+#SBATCH --gres=gpu:1 # request 1 gpu node
+#SBATCH --constraint="rhel8" # version specification
 
 source $HOME/.bashrc
-conda activate $HOME/pyEnvs/hoomd
+
+module load gcc/9.1.0
+module load cuda/11.4
+
+conda activate hoomd
 
 python3 -u yourScript.py arg1 arg2 arg3 ...
 
 conda deactivate
 ```
+
+***ADDED 2022-06-08: Make sure to include `#SBATCH --constraint="rhel8"` in the SBATCH options and do `module load gcc/9.1.0` and `module load cuda/11.4` after sourcing .bashrc to make sure the updated nodes find the right version of the required packages. Likely to become unnecessary as the cluster update finalizes.***
 
 ## 6. Troubleshooting
 

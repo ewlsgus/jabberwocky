@@ -95,4 +95,8 @@ Check your installation with `nvcc --version` and `nvidia-smi`. If the command r
 
 ## 4. Installing HOOMD-blue in  WSL
 
-Proceed with the following guide for installing HOOMD-blue on Linux: [Linux Installation Guide](./install/Linux.md)
+Both the Longleaf cluster and the Ubuntu installed on your WSL are Linux systems. You can finish setting up your Ubuntu system with HOOMD-blue by following the sections 2-2~4 of [this](./Longleaf.md) guide.
+
+## 5. WSL Tips and Tricks
+
+To Be ADDED.
